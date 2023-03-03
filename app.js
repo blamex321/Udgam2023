@@ -20,9 +20,9 @@ app.get("/register",function(req,res){
   res.sendFile(__dirname + "/register.html");
 });
 
-app.post("/register",function(req,res){
-  res.redirect("https://www.collexo.com/user/login/?dest=/pay-fee/srm-university-ap-andhra-pradesh-37692/");
-});
+// app.post("/register",function(req,res){
+//   res.redirect("https://www.collexo.com/user/login/?dest=/pay-fee/srm-university-ap-andhra-pradesh-37692/");
+// });
 
 app.listen(3000 || process.env.PORT,function(err){
   if(!err){
