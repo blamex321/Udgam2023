@@ -220,7 +220,6 @@
       <div class="general">
       In case you have already registered, Please contact the organizers on the numbers given in the homepage.
       </div>
-
     </div> -->
   <div class="heading">Registrations</div>
   <div class="headingmain cardd">
@@ -233,9 +232,9 @@
       <ul>
         <li> Registration is mandatory for Students to participate in Udgam 2023.</li>
         <li>Only a bonafide, full time student, who is enrolled for a <strong>Bachelors or a Masters
-            course</strong>
+            degree</strong>
           in
-          the University/College, will be eligible to participate. Students should be no older than <strong>25
+          any University/College, will be eligible to participate. Students should be no older than <strong>25
             years
             old</strong>.</li>
         <li>All participants are mandatorily required to bring a <strong>hard copy</strong> of their
@@ -314,8 +313,9 @@
         <label>
           <p>&nbsp; I Agree to the terms and conditions stated above</p>
         </label> <br>
-        <button class="arrow-button" id="submitButton" type="submit" name="button" style="visibility:hidden">Register<span class="arrow"></span>
-        </button>
+        <label id = "error" style="visibility:visible">Please agree to the terms and conditions.</label>
+        <button class="arrow-button" id="submitButton" type="submit" name="button" style="visibility:visible" disabled>Register<span class="arrow"></span></button>
+
       </form>
     </div>
   </div>
@@ -342,9 +342,12 @@
     <script type="text/javascript">
       function changeVisibility() {
         if (document.getElementById("termsCB").checked) {
-          document.getElementById("submitButton").style.visibility = "visible";
+          document.getElementById("submitButton").disabled = false;
+          document.getElementById("error").style.visibility = "hidden";
         } else {
-          document.getElementById("submitButton").style.visibility = "hidden";
+          document.getElementById("submitButton").disabled = true;
+          document.getElementById("error").innerHTML = "Please agree to the terms and conditions.";
+          document.getElementById("error").style.visibility = "visible";
         }
       }
     </script>
