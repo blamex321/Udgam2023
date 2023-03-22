@@ -319,7 +319,7 @@
       </form>
     </div>
   </div>
-  <div class="maincard">
+  <!-- <div class="maincard">
     <div class="cardd lcl">
       <div class="container">
         <h1 id="headline">Registrations End In:- </h1>
@@ -338,7 +338,7 @@
         </div>
       </div>
     </div>
-    </div>
+    </div> -->
     <script type="text/javascript">
       function changeVisibility() {
         if (document.getElementById("termsCB").checked) {
@@ -393,7 +393,7 @@
           mm = String(today.getMonth() + 1).padStart(2, "0"),
           yyyy = today.getFullYear(),
           nextYear = yyyy + 1,
-          dayMonth = "03/22/",
+          dayMonth = "03/24/",
           birthday = dayMonth + yyyy;
 
         today = mm + "/" + dd + "/" + yyyy;
@@ -415,7 +415,7 @@
 
             //do something later when date is reached
             if (distance < 0) {
-              document.getElementById("headline").innerText = "Fire🔥🔥🔥🔥🔥🔥";
+              document.getElementById("headline").innerText = "Registrations Closed";
               document.getElementById("countdown").style.display = "none";
               document.getElementById("content").style.display = "block";
               clearInterval(x);
