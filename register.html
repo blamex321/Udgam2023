@@ -213,15 +213,10 @@
   </style>
   <!-- <div class="img1"></div> -->
   <div class="buff"></div>
-  <!-- <div class="heading">
-      The Registrations are temporarily closed due to unavailability of university officals.<br>
-      Please wait till the Registrations reopen.<br>
-      Inconvenience caused is deeply regretted.<br>
-      <div class="general">
-      In case you have already registered, Please contact the organizers on the numbers given in the homepage.
-      </div>
-    </div> -->
-  <div class="heading">Registrations</div>
+  <div class="heading">
+    Due to unforseen weather conditions we are postponing Udgam 2023 untill further notice.
+  </div>
+  <!-- <div class="heading">Registrations</div>
   <div class="headingmain cardd">
     <h2>Registrations Closes On</h2>
     <h2>22 March 2023</h2>
@@ -318,7 +313,7 @@
 
       </form>
     </div>
-  </div>
+  </div> -->
   <!-- <div class="maincard">
     <div class="cardd lcl">
       <div class="container">
@@ -339,91 +334,91 @@
       </div>
     </div>
     </div> -->
-    <script type="text/javascript">
-      function changeVisibility() {
-        if (document.getElementById("termsCB").checked) {
-          document.getElementById("submitButton").disabled = false;
-          document.getElementById("error").style.visibility = "hidden";
-        } else {
-          document.getElementById("submitButton").disabled = true;
-          document.getElementById("error").innerHTML = "Please agree to the terms and conditions.";
-          document.getElementById("error").style.visibility = "visible";
-        }
+  <script type="text/javascript">
+    function changeVisibility() {
+      if (document.getElementById("termsCB").checked) {
+        document.getElementById("submitButton").disabled = false;
+        document.getElementById("error").style.visibility = "hidden";
+      } else {
+        document.getElementById("submitButton").disabled = true;
+        document.getElementById("error").innerHTML = "Please agree to the terms and conditions.";
+        document.getElementById("error").style.visibility = "visible";
       }
-    </script>
-    <script>
-      // For toggling and finding number of children and other stuff is done here!
+    }
+  </script>
+  <script>
+    // For toggling and finding number of children and other stuff is done here!
 
-      const navigation = document.getElementById("nav");
-      const menu = document.getElementById("menu");
+    const navigation = document.getElementById("nav");
+    const menu = document.getElementById("menu");
 
-      menu.addEventListener("click", () => {
-        // The navigation.children.length means the following :-
-        // The children inside a parent are basically an array of elements; So, here I'm finding the length of the array aka how many children are inside the nav bar.
-        //   Yup That's all.
-        navigation.style.setProperty("--childenNumber", navigation.children.length);
+    menu.addEventListener("click", () => {
+      // The navigation.children.length means the following :-
+      // The children inside a parent are basically an array of elements; So, here I'm finding the length of the array aka how many children are inside the nav bar.
+      //   Yup That's all.
+      navigation.style.setProperty("--childenNumber", navigation.children.length);
 
-        //    Casually Toggling Classes to make them animate on click
-        //   Regular stuff ;)
-        navigation.classList.toggle("active");
-        menu.classList.toggle("active");
-      });
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    <script>
-      const navbarToggle = document.querySelector(".navbar-toggle");
-      const navbarMenu = document.querySelector(".navbar-menu");
+      //    Casually Toggling Classes to make them animate on click
+      //   Regular stuff ;)
+      navigation.classList.toggle("active");
+      menu.classList.toggle("active");
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  <script>
+    const navbarToggle = document.querySelector(".navbar-toggle");
+    const navbarMenu = document.querySelector(".navbar-menu");
 
-      navbarToggle.addEventListener("click", () => {
-        navbarToggle.classList.toggle("active");
-        navbarMenu.classList.toggle("active");
-      });
-    </script>
-    <script>
-      (function() {
-        const second = 1000,
-          minute = second * 60,
-          hour = minute * 60,
-          day = hour * 24;
+    navbarToggle.addEventListener("click", () => {
+      navbarToggle.classList.toggle("active");
+      navbarMenu.classList.toggle("active");
+    });
+  </script>
+  <script>
+    (function() {
+      const second = 1000,
+        minute = second * 60,
+        hour = minute * 60,
+        day = hour * 24;
 
-        //I'm adding this section so I don't have to keep updating this pen every year :-)
-        //remove this if you don't need it
-        let today = new Date(),
-          dd = String(today.getDate()).padStart(2, "0"),
-          mm = String(today.getMonth() + 1).padStart(2, "0"),
-          yyyy = today.getFullYear(),
-          nextYear = yyyy + 1,
-          dayMonth = "03/24/",
-          birthday = dayMonth + yyyy;
+      //I'm adding this section so I don't have to keep updating this pen every year :-)
+      //remove this if you don't need it
+      let today = new Date(),
+        dd = String(today.getDate()).padStart(2, "0"),
+        mm = String(today.getMonth() + 1).padStart(2, "0"),
+        yyyy = today.getFullYear(),
+        nextYear = yyyy + 1,
+        dayMonth = "03/24/",
+        birthday = dayMonth + yyyy;
 
-        today = mm + "/" + dd + "/" + yyyy;
-        if (today > birthday) {
-          birthday = dayMonth + nextYear;
-        }
-        //end
+      today = mm + "/" + dd + "/" + yyyy;
+      if (today > birthday) {
+        birthday = dayMonth + nextYear;
+      }
+      //end
 
-        const countDown = new Date(birthday).getTime(),
-          x = setInterval(function() {
+      const countDown = new Date(birthday).getTime(),
+        x = setInterval(function() {
 
-            const now = new Date().getTime(),
-              distance = countDown - now;
+          const now = new Date().getTime(),
+            distance = countDown - now;
 
-            document.getElementById("days").innerText = Math.floor(distance / (day)),
-              document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
-              document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
-              document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+          document.getElementById("days").innerText = Math.floor(distance / (day)),
+            document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
+            document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
+            document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
 
-            //do something later when date is reached
-            if (distance < 0) {
-              document.getElementById("headline").innerText = "Registrations Closed";
-              document.getElementById("countdown").style.display = "none";
-              document.getElementById("content").style.display = "block";
-              clearInterval(x);
-            }
-            //seconds
-          }, 0)
-      }());
-    </script>
+          //do something later when date is reached
+          if (distance < 0) {
+            document.getElementById("headline").innerText = "Registrations Closed";
+            document.getElementById("countdown").style.display = "none";
+            document.getElementById("content").style.display = "block";
+            clearInterval(x);
+          }
+          //seconds
+        }, 0)
+    }());
+  </script>
 </body>
 
 </html>
