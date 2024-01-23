@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="details.css">
+  <link rel="stylesheet" href="register.css">
+  <link rel="icon" type="image/x-icon" href="src/favicon.ico">
+  <title>Register</title>
+</head>
+
+<body>
+  <!-- Just a simple layout -->
+
+  <nav>
+    <div>
+      <div class="logoo">
+        <a href="/">
+          UDGAM'23</a>
+      </div>
+    </div>
+    <div>
+      <ul id="nav">
+        <li><a href="/">Home</a></li>
+        <li><a href="/details">Sports</a></li>
+        <li><a href="/register">Registrations</a></li>
+      </ul>
+    </div>
+    <div class="menu" id="menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+  <style>
+    /* Important stuff here! Look at the bottom!!! (Line 133 to 136) */
+    *,
+    *::after,
+    *::before {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      /* font-family: "Poppins", sans-serif; */
+    }
+
+    :root {
+      --nav-bg: #000000;
+      --main-clr: gold;
+      --nav-shadow: 0px 3px var(--main-clr);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      position: fixed;
+      width: 100%;
+      height: 4rem;
+      z-index: 999;
+      background: #000000;
+      /* box-shadow: var(--nav-shadow); */
+    }
+
+    nav .logo {
+      color: #fff;
+      text-decoration-color: var(--main-clr);
+      font-size: 1.5rem;
+      font-family: crazy;
+      width: 10rem;
+      font-weight: 100;
+      /* 0px 3px var(--main-clr) */
+    }
+
+    nav ul {
+      --padding: 20px;
+      --font-size: 17px;
+
+      list-style: none;
+      display: flex;
+      align-items: center;
+      font-size: var(--font-size);
+      overflow-y: hidden;
+      transition: 1s cubic-bezier(.68, -0.55, .27, 10.55);
+      /* box-shadow: var(--nav-shadow); */
+    }
+
+    nav ul li {
+
+      padding-top: var(--padding);
+      padding-right: var(--padding);
+      /* padding-left: var(--padding); */
+
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      position: relative;
+    }
+
+    nav ul li a:hover {
+      color: antiquewhite;
+      opacity: 1;
+    }
+
+    nav ul li a::after {
+      content: "";
+      width: 0%;
+      height: 1.7px;
+      border-radius: 99px;
+      background: var(--main-clr);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transition: 0.3s ease;
+    }
+
+    nav ul li a:hover::after {
+      width: 100%;
+
+    }
+
+    nav .menu {
+      width: 22px;
+      height: 16px;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      margin: 20px;
+    }
+
+    nav .menu span {
+      width: 100%;
+      height: 2px;
+      border-radius: 99px;
+      background: #fff;
+      transition: 0.3s ease;
+      transform-origin: left;
+    }
+
+    nav .menu.active span {
+      background: var(--main-clr);
+    }
+
+    nav .menu.active span:nth-child(1) {
+      transform: rotate(40deg);
+    }
+
+    nav .menu span:nth-child(3) {
+      transform-origin: left;
+    }
+
+    nav .menu.active span:nth-child(3) {
+      transform: rotate(-40deg);
+    }
+
+    nav .menu.active span:nth-child(2) {
+      transform: scale(0);
+    }
+
+    @media (max-width: 768px) {
+      nav .menu {
+        display: flex;
+
+      }
+
+      nav ul {
+        --height: 0px;
+
+        flex-direction: column;
+        background: var(--nav-bg);
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 56px;
+        height: var(--height);
+        transition: 1s cubic-bezier(.68, -0.55, .27, 1.55);
+      }
+
+      nav ul.active {
+        --height: calc((((var(--padding) * 2) + (var(--font-size) * 1.5))) * var(--childenNumber));
+        /*   (Block Level Padding + The Font Size) * The Number of Children   */
+
+
+        transition: 1s ease;
+      }
+
+      nav ul li {
+        width: 100%;
+        text-align: center;
+      }
+
+      nav ul li a {
+        width: 100%;
+        text-transform: capitalize;
+      }
+    }
+
+    .headd {
+      text-align: center;
+      padding-top: 10rem;
+      /* vertical-align: middle; */
+      color: #fff;
+      font-size: 5rem;
+    }
+  </style>
+  <!-- <div class="img1"></div> -->
+  <div class="buff"></div>
+
+<div class="heading">Registrations Closed for Udgam 2023. Hoping to see you next year as well.</div>
+  <!-- <div class="headingmain cardd">
+    <h2>Registrations Closes On</h2>
+    <h2>22 March 2023</h2>
+  </div> -->
+
+<!-- 
+  <div class="mainn">
+    <div class="general">
+      <h1>General Instructions</h1>
+      <ul>
+        <li> Registration is mandatory for Students to participate in Udgam 2023.</li>
+        <li>Only a bonafide, full time student, who is enrolled for a <strong>Bachelors or a Masters
+            degree</strong>
+          in
+          any University/College, will be eligible to participate.</li>
+        <li>All participants are mandatorily required to bring a <strong>hard copy</strong> of their
+          <strong>college
+            Identity card</strong> along with an <strong>Aadhaar card</strong> for the verification process.
+        </li>
+        <li>Registration desks of Udgam 2023 will issue a temporary identity card to all its participants.
+          Participants
+          should bear this card at all times (3 days) during the events.</li>
+        <li>Complete registration will be done on <strong>15th April (8:30 AM - 12:30 PM)</strong>.</li>
+        <li>Fixtures will be finalized by the Organizing committee and intimated to the participating teams.
+        </li>
+        <li>Organizing committee reserves the right to decide when the matches for any team will start to ensure
+          the
+          best
+          of Udgam 2023.</li>
+        <li>Participating teams will be informed about their matches at least 30 minutes in advance and are
+          expected
+          to
+          adhere to the mentioned timings. Exceptions will be only in the hands of the Organizing committee.
+        </li>
+        <li>Illegal participation of any Player/Team in any event will be responsible for disqualification of
+          the
+          team of
+          the concerned college from the event of the tournament and the college authority will be responsible
+          for
+          this act. The Organizing Committee reserves rights to take action against the people and university
+          authorities, and even ban further participation.</li>
+        <li>Participants are required to present requested documents upon the demands of the organizing Committee
+          and
+          Organizing Committee.</li>
+        <li>Any participating College/University can present an objection against the opponents on the grounds
+          of
+          illegal
+          participation or lack of adherence to rules, during a match or 15 minutes before/after the match.
+          Objections
+          can be made either to the Organizing Committee or the Referees.</li>
+        <li>All events will commence at the scheduled time; Punctuality will be appreciated.</li>
+        <li>Payments can be done by using the QR code provided. Transaction ID should be verified</li>
+        <li>Only registered students will be permitted to enter the college premises.</li>
+        <li><u><strong>Students of SRMAP are not allowed to register thorugh this portal. For participation, please contact respective sports managers. </strong> </u></li>
+      </ul>
+    </div>
+    <div class="discipline">
+      <h1>Discipline Rules</h1>
+      <ul>
+        <li>Students should mandatorily carry their identity card while entering the event.</li>
+        <li>Smoking, drinking and consumption of objectionable materials are prohibited in the University. A
+          stringent
+          action will be taken against students if they are found in possession, consumption, and
+          transportation.
+        </li>
+        <li>Any student found indulging in ragging or assaulting students in any form within the University
+          shall be
+          immediately debarred from the Tournament and necessary authorities will be informed.</li>
+        <li>A student who engages in abusive language will be subjected to disciplinary action</li>
+        <li>Any student found guilty of defacing or damaging University property like furniture, equipment, etc.
+          will
+          be
+          debarred from the tournament and no refunds will be made. Necessary action will be taken
+          accordingly.
+        </li>
+        <li>All students of SRMAP must behave appropriately with students of other universities and colleges who
+          are
+          participating in Udgam 2023.</li>
+        <li>If any participant is found involved in any in- discipline or objectionable activities he/she will
+          be
+          debarred from the tournament depending on the situation. The Discipline Committee reserves rights to
+          take
+          actions in matters pertaining to disciplinary issues.</li>
+      </ul>
+    </div>
+    <h1 class = "heading">Registrations for Cricket are closed from 13th April 2:00 Pm</h1>
+    <div class="terms">
+      <form class="" action="/register" method="post">
+        <input id="termsCB" type="checkbox" onChange="changeVisibility()" name="terms" value="">
+        <label>
+          <p>&nbsp; I Agree to the terms and conditions stated above</p>
+        </label> <br>
+        <label id = "error" style="visibility:visible">Please agree to the terms and conditions.</label>
+        <button class="arrow-button" id="submitButton" type="submit" name="button" style="visibility:visible" disabled>Register<span class="arrow"></span></button>
+
+      </form>
+    </div>
+  </div>
+  <div class="maincard">
+    <div class="cardd lcl">
+      <div class="container">
+        <h1 id="headline">Registrations End In:- </h1>
+        <div id="countdown">
+
+          <li><span id="days"></span>days</li>
+          <li><span id="hours"></span>Hours</li>
+          <li><span id="minutes"></span>Minutes</li>
+          <li><span id="seconds"></span>Seconds</li>
+
+        </div>
+        <div id="content" class="emoji">
+          <span>🥲</span>
+        </div>
+      </div>
+    </div>
+    </div>
+
+  <script type="text/javascript">
+    function changeVisibility() {
+      if (document.getElementById("termsCB").checked) {
+        document.getElementById("submitButton").disabled = false;
+        document.getElementById("error").style.visibility = "hidden";
+      } else {
+        document.getElementById("submitButton").disabled = true;
+        document.getElementById("error").innerHTML = "Please agree to the terms and conditions.";
+        document.getElementById("error").style.visibility = "visible";
+      }
+    }
+  </script>
+  <script>
+    // For toggling and finding number of children and other stuff is done here!
+
+    const navigation = document.getElementById("nav");
+    const menu = document.getElementById("menu");
+
+    menu.addEventListener("click", () => {
+      // The navigation.children.length means the following :-
+      // The children inside a parent are basically an array of elements; So, here I'm finding the length of the array aka how many children are inside the nav bar.
+      //   Yup That's all.
+      navigation.style.setProperty("--childenNumber", navigation.children.length);
+
+      //    Casually Toggling Classes to make them animate on click
+      //   Regular stuff ;)
+      navigation.classList.toggle("active");
+      menu.classList.toggle("active");
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  <script>
+    const navbarToggle = document.querySelector(".navbar-toggle");
+    const navbarMenu = document.querySelector(".navbar-menu");
+
+    navbarToggle.addEventListener("click", () => {
+      navbarToggle.classList.toggle("active");
+      navbarMenu.classList.toggle("active");
+    });
+  </script>
+  <script>
+    (function() {
+      const second = 1000,
+        minute = second * 60,
+        hour = minute * 60,
+        day = hour * 24;
+
+      //I'm adding this section so I don't have to keep updating this pen every year :-)
+      //remove this if you don't need it
+      let today = new Date(),
+        dd = String(today.getDate()).padStart(2, "0"),
+        mm = String(today.getMonth() + 1).padStart(2, "0"),
+        yyyy = today.getFullYear(),
+        nextYear = yyyy + 1,
+        dayMonth = "04/15/",
+        birthday = dayMonth + yyyy;
+
+      today = mm + "/" + dd + "/" + yyyy;
+      if (today > birthday) {
+        birthday = dayMonth + nextYear;
+      }
+      //end
+
+      const countDown = new Date(birthday).getTime(),
+        x = setInterval(function() {
+
+          const now = new Date().getTime(),
+            distance = countDown - now;
+
+          document.getElementById("days").innerText = Math.floor(distance / (day)),
+            document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
+            document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
+            document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+
+          //do something later when date is reached
+          if (distance < 0) {
+            document.getElementById("headline").innerText = "Registrations Closed";
+            document.getElementById("countdown").style.display = "none";
+            document.getElementById("content").style.display = "block";
+            clearInterval(x);
+          }
+          //seconds
+        }, 0)
+    }());
+  </script> -->
+</body>
+
+</html>
